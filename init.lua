@@ -11,9 +11,7 @@ local function collectgarbage_info()
 	end)	
 end
 
-minetest.register_on_joinplayer(function(player)
-	collectgarbage_info()
-end)
+collectgarbage_info()
 
 minetest.register_globalstep(function(dtime)
 	if collectgarbage("count") > (max_ram * 1024) then
