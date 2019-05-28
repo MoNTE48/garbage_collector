@@ -1,5 +1,5 @@
 -- How often to report used memory
-local log_time = 5
+local log_time = 30
 
 -- Value before collecting, MB
 local max_ram = 800
