@@ -1,12 +1,12 @@
 -- How often to report used memory
-local log_time = 3
+local log_time = 5
 
 -- Value before collecting, MB
 local max_ram = 500
 
 local function collectgarbage_info()
 	minetest.after(log_time, function()
-		minetest.log("warning", "[GARBAGE] Used ".. collectgarbage("count")/1024 .." MB.")
+		minetest.log("warning", "[GARBAGE] Used ".. math.ceil(collectgarbage("count")/1024) .." MB.")
 		collectgarbage_info()
 	end)	
 end
